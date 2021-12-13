@@ -3,11 +3,14 @@ const http = require('http');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const cors = require('cors');
 
 const app = express();
 
 app.use(passport.initialize());
 require('./services/passport');
+
+app.use(cors())
 
 const router = require('./router');
 
